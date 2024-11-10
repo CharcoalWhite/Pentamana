@@ -63,10 +63,10 @@ public class Pentamana implements ModInitializer {
 		ServerLifecycleEvents.SERVER_STARTED.register(server -> {
 			scoreboard = server.getScoreboard();
 			manaObjective = scoreboard.getOrAddObjective(MANA, ScoreboardCriterion.DUMMY, Text.of("Mana"), ScoreboardCriterion.RenderType.INTEGER, true, null);
-			manaCapacityObjective = scoreboard.addObjective(MANA_CAPACITY, ScoreboardCriterion.DUMMY, Text.of("Mana Capacity"), ScoreboardCriterion.RenderType.INTEGER, true, null);
-			manaRegenObjective = scoreboard.addObjective(MANA_REGEN, ScoreboardCriterion.DUMMY, Text.of("Mana Regen"), ScoreboardCriterion.RenderType.INTEGER, true, null);
-			manaConsumObjective = scoreboard.addObjective(MANA_CONSUM, ScoreboardCriterion.DUMMY, Text.of("Mana Consum"), ScoreboardCriterion.RenderType.INTEGER, true, null);
-			manabarLifeObjective = scoreboard.addObjective(MANABAR_LIFE, ScoreboardCriterion.DUMMY, Text.of("Manabar Life"), ScoreboardCriterion.RenderType.INTEGER, true, null);
+			manaCapacityObjective = scoreboard.getOrAddObjective(MANA_CAPACITY, ScoreboardCriterion.DUMMY, Text.of("Mana Capacity"), ScoreboardCriterion.RenderType.INTEGER, true, null);
+			manaRegenObjective = scoreboard.getOrAddObjective(MANA_REGEN, ScoreboardCriterion.DUMMY, Text.of("Mana Regen"), ScoreboardCriterion.RenderType.INTEGER, true, null);
+			manaConsumObjective = scoreboard.getOrAddObjective(MANA_CONSUM, ScoreboardCriterion.DUMMY, Text.of("Mana Consum"), ScoreboardCriterion.RenderType.INTEGER, true, null);
+			manabarLifeObjective = scoreboard.getOrAddObjective(MANABAR_LIFE, ScoreboardCriterion.DUMMY, Text.of("Manabar Life"), ScoreboardCriterion.RenderType.INTEGER, true, null);
 		});
 	}
 }
