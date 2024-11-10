@@ -29,10 +29,13 @@
 	],
 	"depends": {
 		"fabricloader": ">=0.16.9",
-		"minecraft": "~1.21",
+		"minecraft": [
+			"1.21",
+			"1.21.1"
+		],
 		"java": ">=21",
 		"fabric-api": "*",
-		"candywrapper": ">=0.2.5"
+		"candywrapper": ">=0.2.6"
 	},
 	"suggests": {
 		"another-mod": "*"
