@@ -59,23 +59,25 @@ public abstract class ServerPlayerEntityMixin implements ServerPlayerEntityApi {
 
 		int mana = this.getMana();
 		int manaCapacity = this.getManaCapacity();
+		int manabarLife = this.getManabarLife();
 		if (mana < manaCapacity && mana >= 0) {
 			this.regenMana();
 		} else if (mana != manaCapacity) {
 			mana = manaCapacity;
 			this.setMana(mana);
-			this.updateMana();
-		}
-		
-		int manabarLife = this.getManabarLife();
-		if (manabarLife == MAX_MANABAR_LIFE) {
+
+			if (manabarLife <= 0) {
+				this.updateMana();
+			}
+
+		} else if (manabarLife == 0 || manabarLife == MAX_MANABAR_LIFE) {
 			this.updateMana();
 		}
     };
 
 	@Override
     public boolean regenMana() {
-		boolean isFullyRegen = true;
+		boolean isFullRegen = true;
 
 		this.setManaRegen(MANA_REGEN_BASE);
 		int level = ((ServerPlayerEntity)(Object)this)
@@ -91,15 +93,19 @@ public abstract class ServerPlayerEntityMixin implements ServerPlayerEntityApi {
 		int mana = this.getMana();
 		int manaCapacity = this.getManaCapacity();
 		int manaRegen = this.getManaRegen();
+		int manabarLife = this.getManabarLife();
 		mana += manaRegen;
 		if (mana > manaCapacity || mana < 0) {
 			mana = manaCapacity;
-			isFullyRegen = false;
+			isFullRegen = false;
 		}
 
 		this.setMana(mana);
-		this.updateMana();
-		return isFullyRegen;
+		if (manabarLife <= 0) {
+			this.updateMana();
+		}
+
+		return isFullRegen;
     }
 	
 	@Override
@@ -116,10 +122,14 @@ public abstract class ServerPlayerEntityMixin implements ServerPlayerEntityApi {
 
 		int mana = this.getMana();
 		int manaConsume = this.getManaConsume();
+		int manabarLife = this.getManabarLife();
 		mana -= manaConsume;
 		if (mana >= 0) {
 			this.setMana(mana);
-			this.updateMana();
+			if (manabarLife <= 0) {
+				this.updateMana();
+			}
+
 			return true;
 		}
 
@@ -128,7 +138,7 @@ public abstract class ServerPlayerEntityMixin implements ServerPlayerEntityApi {
 
 	@Override
     public void updateMana() {
-		this.resetManabarLife();
+		this.setManabarLife(-MAX_MANABAR_LIFE);
 		
 		int mana = this.getMana();
 		int manaCapacity = this.getManaCapacity();
