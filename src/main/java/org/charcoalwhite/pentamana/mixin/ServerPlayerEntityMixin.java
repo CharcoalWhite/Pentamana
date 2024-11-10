@@ -23,7 +23,7 @@ import static org.charcoalwhite.pentamana.Pentamana.scoreboard;
 import static org.charcoalwhite.pentamana.Pentamana.manaCapacityObjective;
 import static org.charcoalwhite.pentamana.Pentamana.manaObjective;
 import static org.charcoalwhite.pentamana.Pentamana.manaRegenObjective;
-import static org.charcoalwhite.pentamana.Pentamana.manaConsumeObjective;
+import static org.charcoalwhite.pentamana.Pentamana.manaConsumObjective;
 import static org.charcoalwhite.pentamana.Pentamana.manabarLifeObjective;
 import org.charcoalwhite.pentamana.api.ConsumeManaCallback;
 import org.charcoalwhite.pentamana.api.RegenManaCallback;
@@ -284,35 +284,35 @@ public abstract class ServerPlayerEntityMixin implements ServerPlayerEntityApi {
 	@Override
 	public int getManaConsume() {
 		ScoreHolder scoreHolder = this.getScoreHolder();
-        ScoreAccess manaConsumeScore = scoreboard.getOrCreateScore(scoreHolder, manaConsumeObjective);
+        ScoreAccess manaConsumeScore = scoreboard.getOrCreateScore(scoreHolder, manaConsumObjective);
 		return manaConsumeScore.getScore();
 	}
 
 	@Override
     public void setManaConsume(int manaConsume) {
 		ScoreHolder scoreHolder = this.getScoreHolder();
-        ScoreAccess manaConsumeScore = scoreboard.getOrCreateScore(scoreHolder, manaConsumeObjective);
+        ScoreAccess manaConsumeScore = scoreboard.getOrCreateScore(scoreHolder, manaConsumObjective);
 		manaConsumeScore.setScore(manaConsume);
     }
 
 	@Override
 	public int incrementManaConsume(int manaConsume) {
 		ScoreHolder scoreHolder = this.getScoreHolder();
-        ScoreAccess manaConsumeScore = scoreboard.getOrCreateScore(scoreHolder, manaConsumeObjective);
+        ScoreAccess manaConsumeScore = scoreboard.getOrCreateScore(scoreHolder, manaConsumObjective);
 		return manaConsumeScore.incrementScore(manaConsume);
 	}
 
 	@Override
 	public int incrementManaConsume() {
 		ScoreHolder scoreHolder = this.getScoreHolder();
-        ScoreAccess manaConsumeScore = scoreboard.getOrCreateScore(scoreHolder, manaConsumeObjective);
+        ScoreAccess manaConsumeScore = scoreboard.getOrCreateScore(scoreHolder, manaConsumObjective);
 		return manaConsumeScore.incrementScore();
 	}
 
 	@Override
     public void resetManaConsume() {
 		ScoreHolder scoreHolder = this.getScoreHolder();
-        ScoreAccess manaConsumeScore = scoreboard.getOrCreateScore(scoreHolder, manaConsumeObjective);
+        ScoreAccess manaConsumeScore = scoreboard.getOrCreateScore(scoreHolder, manaConsumObjective);
 		manaConsumeScore.resetScore();
     }
 
