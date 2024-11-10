@@ -32,7 +32,7 @@ public class Pentamana implements ModInitializer {
 	// It is 2^24*2-1.
 	public static final int MANA_CAPACITY_BASE = 33554431;
 
-	// It is 2^24*2-1.
+	// It is 2^24*2.
 	public static final int MANA_CAPACITY_EXPANSION_BASE = 33554432;
 
 	// It is 2^20.
