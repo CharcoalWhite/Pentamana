@@ -6,6 +6,8 @@ import net.minecraft.scoreboard.Scoreboard;
 import net.minecraft.scoreboard.ScoreboardCriterion;
 import net.minecraft.scoreboard.ScoreboardObjective;
 import net.minecraft.text.Text;
+import net.minecraft.util.Formatting;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -45,6 +47,7 @@ public class Pentamana implements ModInitializer {
 	public static final char MANA_STAR_INTACT = '\u2605';
 	public static final char MANA_STAR_BROKEN = '\u2bea';
 	public static final char MANA_STAR_HOLLOW = '\u2606';
+	public static final Formatting MANA_COLOR = Formatting.AQUA;
 	public static Scoreboard scoreboard;
 	public static ScoreboardObjective manaObjective;
 	public static ScoreboardObjective manaCapacityObjective;

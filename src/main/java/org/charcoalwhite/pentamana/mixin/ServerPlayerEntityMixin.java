@@ -10,6 +10,7 @@ import static org.charcoalwhite.pentamana.Pentamana.CAPACITY;
 import static org.charcoalwhite.pentamana.Pentamana.EMANATION;
 import static org.charcoalwhite.pentamana.Pentamana.MANA_CAPACITY_BASE;
 import static org.charcoalwhite.pentamana.Pentamana.MANA_CAPACITY_EXPANSION_BASE;
+import static org.charcoalwhite.pentamana.Pentamana.MANA_COLOR;
 import static org.charcoalwhite.pentamana.Pentamana.MANA_REGEN_BASE;
 import static org.charcoalwhite.pentamana.Pentamana.MANA_REGEN_EXPANSION_BASE;
 import static org.charcoalwhite.pentamana.Pentamana.MANA_SCALE;
@@ -158,7 +159,7 @@ public abstract class ServerPlayerEntityMixin implements ServerPlayerEntityApi {
 			manabar.append(MANA_STAR_HOLLOW);
 		}
 
-		this.sendMessage(Text.literal(manabar.toString()).formatted(Formatting.AQUA), true);
+		this.sendMessage(Text.literal(manabar.toString()).formatted(MANA_COLOR), true);
     }
 
 	@Override
