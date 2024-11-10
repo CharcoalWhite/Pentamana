@@ -5,7 +5,6 @@ import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.minecraft.scoreboard.Scoreboard;
 import net.minecraft.scoreboard.ScoreboardCriterion;
 import net.minecraft.scoreboard.ScoreboardObjective;
-import net.minecraft.server.MinecraftServer;
 import net.minecraft.text.Text;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -62,40 +61,12 @@ public class Pentamana implements ModInitializer {
 		LOGGER.info("[Pentamana] Loaded!");
 
 		ServerLifecycleEvents.SERVER_STARTED.register(server -> {
-			getObjective(server);
+			scoreboard = server.getScoreboard();
+			manaObjective = scoreboard.getOrAddObjective(MANA, ScoreboardCriterion.DUMMY, Text.of("Mana"), ScoreboardCriterion.RenderType.INTEGER, true, null);
+			manaCapacityObjective = scoreboard.addObjective(MANA_CAPACITY, ScoreboardCriterion.DUMMY, Text.of("Mana Capacity"), ScoreboardCriterion.RenderType.INTEGER, true, null);
+			manaRegenObjective = scoreboard.addObjective(MANA_REGEN, ScoreboardCriterion.DUMMY, Text.of("Mana Regen"), ScoreboardCriterion.RenderType.INTEGER, true, null);
+			manaConsumeObjective = scoreboard.addObjective(MANA_CONSUM, ScoreboardCriterion.DUMMY, Text.of("Mana Consume"), ScoreboardCriterion.RenderType.INTEGER, true, null);
+			manabarLifeObjective = scoreboard.addObjective(MANABAR_LIFE, ScoreboardCriterion.DUMMY, Text.of("Manabar Life"), ScoreboardCriterion.RenderType.INTEGER, true, null);
 		});
-	}
-
-	public static void getObjective(MinecraftServer server) {
-		scoreboard = server.getScoreboard();
-		manaObjective = scoreboard.getNullableObjective(MANA);
-		if (manaObjective == null) {
-			scoreboard.addObjective(MANA, ScoreboardCriterion.DUMMY, Text.of("Mana"), ScoreboardCriterion.RenderType.INTEGER, true, null);
-			manaObjective = scoreboard.getNullableObjective(MANA);
-		}
-
-		manaCapacityObjective = scoreboard.getNullableObjective(MANA_CAPACITY);
-		if (manaCapacityObjective == null) {
-			scoreboard.addObjective(MANA_CAPACITY, ScoreboardCriterion.DUMMY, Text.of("Mana Capacity"), ScoreboardCriterion.RenderType.INTEGER, true, null);
-			manaCapacityObjective = scoreboard.getNullableObjective(MANA_CAPACITY);
-		}
-
-		manaRegenObjective = scoreboard.getNullableObjective(MANA_REGEN);
-		if (manaRegenObjective == null) {
-			scoreboard.addObjective(MANA_REGEN, ScoreboardCriterion.DUMMY, Text.of("Mana Regen"), ScoreboardCriterion.RenderType.INTEGER, true, null);
-			manaRegenObjective = scoreboard.getNullableObjective(MANA_REGEN);
-		}
-
-		manaConsumeObjective = scoreboard.getNullableObjective(MANA_CONSUM);
-		if (manaConsumeObjective == null) {
-			scoreboard.addObjective(MANA_CONSUM, ScoreboardCriterion.DUMMY, Text.of("Mana Consume"), ScoreboardCriterion.RenderType.INTEGER, true, null);
-			manaConsumeObjective = scoreboard.getNullableObjective(MANA_CONSUM);
-		}
-
-		manabarLifeObjective = scoreboard.getNullableObjective(MANABAR_LIFE);
-		if (manabarLifeObjective == null) {
-			scoreboard.addObjective(MANABAR_LIFE, ScoreboardCriterion.DUMMY, Text.of("Manabar Life"), ScoreboardCriterion.RenderType.INTEGER, true, null);
-			manabarLifeObjective = scoreboard.getNullableObjective(MANABAR_LIFE);
-		}
 	}
 }
