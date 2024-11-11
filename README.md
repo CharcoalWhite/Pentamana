@@ -30,7 +30,7 @@ Enchantment damage would need additional apply.
 
 - Maximum level: II
 - Primary items: Stick
-- Secondary items: Axe, Hoe, Pickaxe, Shovel, Sword
+- Secondary items: Axe, Hoe, Mace, Pickaxe, Shovel, Sword, Trident
 - Enchantment weight: 2
 
 Capacity adds extra mana capacity 33,554,432 per level.
@@ -39,7 +39,7 @@ Capacity adds extra mana capacity 33,554,432 per level.
 
 - Maximum level: II
 - Primary items: Stick
-- Secondary items: Axe, Hoe, Pickaxe, Shovel, Sword
+- Secondary items: Axe, Hoe, Mace, Pickaxe, Shovel, Sword, Trident
 - Enchantment weight: 5
 
 Emanation adds extra mana regeneration 65,536 per level.
@@ -48,7 +48,7 @@ Emanation adds extra mana regeneration 65,536 per level.
 
 - Maximum level: V
 - Primary items: Stick
-- Secondary items: Axe, Hoe, Pickaxe, Shovel, Sword
+- Secondary items: Axe, Hoe, Mace, Pickaxe, Shovel, Sword, Trident
 - Enchantment weight: 10
 
 Potency adds 1 extra casting magic damage for the first level and 0.5 for all subsequent levels.
@@ -57,7 +57,7 @@ Potency adds 1 extra casting magic damage for the first level and 0.5 for all su
 
 - Maximum level: V
 - Primary items: Stick
-- Secondary items: Axe, Hoe, Pickaxe, Shovel, Sword
+- Secondary items: Axe, Hoe, Mace, Pickaxe, Shovel, Sword, Trident
 - Enchantment weight: 5
 
 Utilization reduces the mana cost of casting by 10% per level.
