@@ -5,7 +5,6 @@ import net.minecraft.scoreboard.ScoreAccess;
 import net.minecraft.scoreboard.ScoreHolder;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
-import net.minecraft.util.Formatting;
 import static org.charcoalwhite.pentamana.Pentamana.CAPACITY;
 import static org.charcoalwhite.pentamana.Pentamana.EMANATION;
 import static org.charcoalwhite.pentamana.Pentamana.MANA_CAPACITY_BASE;
