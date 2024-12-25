@@ -3,7 +3,7 @@
 	"id": "pentamana",
 	"version": "${version}",
 	"name": "Pentamana",
-	"description": "Add mana system based on scoreboard for server side.",
+	"description": "Scoreboard-based mana system runs on server-side.",
 	"authors": [
 		{
 			"name": "CharcoalWhite",
