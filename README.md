@@ -1,6 +1,6 @@
 # Pentamana
 
-Pentamana introduces mana as a base stat into Minecraft. A row of aqua stars utilizing the actionbar respresents the player's current mana supply and capacity.
+Pentamana is a scoreboard-based mana mod that runs server-side providing mana modification and damage calculation hooks. It introduces mana as a base stat into Minecraft. A row of aqua stars utilizing the actionbar respresents the player's current mana supply and capacity.
 
 ## Mana Mechanic
 
