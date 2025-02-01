@@ -3,7 +3,7 @@
 	"id": "pentamana",
 	"version": "${version}",
 	"name": "Pentamana",
-	"description": "Scoreboard-based mana system runs on server-side.",
+	"description": "Scoreboard-based mana mod providing mana modifying and damage calculation hooks.",
 	"authors": [
 		{
 			"name": "CharcoalWhite",
@@ -29,13 +29,10 @@
 	],
 	"depends": {
 		"fabricloader": ">=0.16.9",
-		"minecraft": [
-			"1.21.2",
-			"1.21.3"
-		],
+		"minecraft": "1.21.4",
 		"java": ">=21",
 		"fabric-api": "*",
-		"candywrapper": ">=0.2.6"
+		"candywrapper": ">=0.3.0"
 	},
 	"suggests": {
 		"another-mod": "*"
